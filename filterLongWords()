@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter Long Words</title>
+    <script>
+        function filterLongWords() {
+            let words = document.getElementById("words").value.split(',');
+            let minLength = parseInt(document.getElementById("minLength").value);
+            let longWords = words.filter(word => word.trim().length > minLength);
+            document.getElementById("result").innerText = `Words longer than ${minLength} characters: ${longWords.join(', ')}`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Filter Long Words</h2>
+    <input type="text" id="words" placeholder="Enter words separated by commas">
+    <input type="number" id="minLength" placeholder="Minimum length">
+    <button onclick="filterLongWords()">Filter</button>
+    <p id="result"></p>
+</body>
+</html>
