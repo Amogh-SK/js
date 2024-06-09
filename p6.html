@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Calculator
+        </title>
+        <style>
+            input[type="button"]{
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Calculator</h1>
+        <input type="text" id="result"><br>
+        <input type="button" value="1" onclick="input('1')">
+        <input type="button" value="2" onclick="input('2')">
+        <input type="button" value="3" onclick="input('3')">
+        <input type="button" value="+" onclick="input('+')">
+        <br>
+        
+        <input type="button" value="4" onclick="input('4')">
+        <input type="button" value="5" onclick="input('5')">
+        <input type="button" value="6" onclick="input('6')">
+        <input type="button" value="-" onclick="input('-')">
+        <br>
+        
+        <input type="button" value="7" onclick="input('7')">
+        <input type="button" value="8" onclick="input('8')">
+        <input type="button" value="9" onclick="input('9')">
+        <input type="button" value="*" onclick="input('*')">
+        <br>
+        
+        <input type="button" value="C" onclick="clearinput()">
+        <input type="button" value="0" onclick="input('0')">
+        <input type="button" value="=" onclick="calculate()">
+        <input type="button" value="/" onclick="input('/')">
+
+        <script>
+            let lastresult = '';
+            let expression = '';
+
+            function input(value){
+                if(value==='+'||value==='-'||value==='*'||value==='/')
+                {
+                    if(lastresult!=='')
+                    {
+                        expression = lastresult;
+                        lastresult='';
+                    }
+                }
+                expression+=value;
+                document.getElementById('result').value=expression;
+            }
+
+            function calculate()
+            {
+                lastresult = eval(expression);
+                expression='';
+                document.getElementById('result').value=lastresult;
+            }
+
+            function clearinput()
+            {
+                lastresult='';
+                expression='';
+                document.getElementById('result').value='';
+            }
+        </script>
+
+    </body>
+</html>

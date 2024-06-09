@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            HI
+        </title>
+    </head>
+    <body>
+        Enter number : <input type="number" id="num" required><br>
+        Enter animal : <input type ="text" id="ani" required><br>
+        <button onclick="getinput()">GO</button>
+        <div id="res"></div>
+        <script>
+
+            function getinput()
+            {
+                const num1 = document.getElementById('num').value;
+                const animalname = document.getElementById('ani').value;
+                const result = pluralize(num1,animalname);
+                document.getElementById('res').textContent=result;
+            }
+            function pluralize(num1,animalname)
+            {
+                let result=' ';
+                if(animalname!='goose' && animalname!='sheep')
+                {
+                    result = num1+animalname+'s';
+                }
+                else
+                {
+                    result = num1+animalname;
+                }
+                return result;
+            }
+
+
+        </script>
+    </body>
+</html>

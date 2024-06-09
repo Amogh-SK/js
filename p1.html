@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HEE</title>
+    </head>
+    <body>
+        Enter the text : <input type="text" id="intext" required><br>
+        <button onclick="f1()">GET T</button>
+        <div id="result"></div>
+
+        <script>
+            function f1(){
+            const inputtxt = document.getElementById('intext').value;
+            const vowels = 'aeiouAEIOU';
+            let finaltxt='';
+            for(let i =0;i<inputtxt.length;i++)
+            {
+                char = inputtxt[i];
+                if(vowels.includes(char))
+                {
+                   finaltxt = finaltxt+char;
+                }
+                else if(char == ' ')
+                {
+                    finaltxt = finaltxt + ' ';
+                }
+                else{
+                    finaltxt = finaltxt+char+'o'+char;
+                }
+            }
+            document.getElementById('result').textContent=finaltxt;
+        }
+        </script>
+    </body>
+</html>

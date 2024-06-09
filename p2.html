@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HI</title>
+    </head>
+    <body>
+        Enter the number : <input type="number" id="num" required><br>
+        <button onclick="f1()">GIVE MONTH</button>
+        <div id="result"></div>
+        <script>
+            function happy(){
+                const arr = ['Jan','Feb','Mar'];
+                return function(){
+                const inputnum = document.getElementById('num').value;
+                const number = parseInt(inputnum);
+
+                if( number>12 || number<1 || !Number.isInteger(number))
+                {
+                    document.getElementById('result').textContent='BAd number';
+                }
+                else
+                {
+                    document.getElementById('result').textContent=arr[number-1];
+                }
+            };
+            }
+            function f1()
+            {
+                const t1 = happy();
+                t1(); 
+            }
+        </script>
+    </body>
+</html>
