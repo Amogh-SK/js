@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sort Names</title>
+    <script>
+        function sortNames() {
+            let names = [];
+            let input;
+            while (input = prompt("Enter a name (Cancel to finish):")) {
+                names.push(input);
+            }
+            names.sort();
+            document.getElementById("result").innerHTML = `<ol>${names.map(name => `<li>${name}</li>`).join('')}</ol>`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Sort Names</h2>
+    <button onclick="sortNames()">Enter Names</button>
+    <div id="result"></div>
+</body>
+</html>
