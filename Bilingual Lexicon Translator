@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translate to Swedish</title>
+    <script>
+        function translateToSwedish() {
+            const lexicon = {
+                "merry": "god", 
+                "christmas": "jul", 
+                "and": "och", 
+                "happy": "gott", 
+                "new": "nytt", 
+                "year": "år"
+            };
+            let sentence = document.getElementById("sentence").value.toLowerCase().split(' ');
+            let translation = sentence.map(word => lexicon[word] || word).join(' ');
+            document.getElementById("result").innerText = translation;
+        }
+    </script>
+</head>
+<body>
+    <h2>Translate to Swedish</h2>
+    <input type="text" id="sentence" placeholder="Enter sentence">
+    <button onclick="translateToSwedish()">Translate</button>
+    <p id="result"></p>
+</body>
+</html>
