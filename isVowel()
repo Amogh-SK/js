@@ -1,8 +1,22 @@
-function isVowel(char) {
-    const vowels = "aeiouAEIOU";
-    return vowels.indexOf(char) !== -1;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vowel Check</title>
+    <script>
+        function isVowel() {
+            let char = document.getElementById("char").value;
+            let vowels = "aeiouAEIOU";
+            let result = vowels.includes(char);
+            document.getElementById("result").innerText = result ? "It's a vowel." : "It's not a vowel.";
+        }
+    </script>
+</head>
+<body>
+    <h2>Check if Character is a Vowel</h2>
+    <input type="text" id="char" maxlength="1" placeholder="Enter a character">
+    <button onclick="isVowel()">Check</button>
+    <p id="result"></p>
+</body>
+</html>
 
-// Example usage:
-console.log(isVowel('a')); // Outputs: true
-console.log(isVowel('b')); // Outputs: false
