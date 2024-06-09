@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sum and Multiply</title>
+    <script>
+        function sum() {
+            let numbers = document.getElementById("numbers").value.split(',').map(Number);
+            let result = numbers.reduce((acc, num) => acc + num, 0);
+            document.getElementById("result").innerText = `Sum: ${result}`;
+        }
+
+        function multiply() {
+            let numbers = document.getElementById("numbers").value.split(',').map(Number);
+            let result = numbers.reduce((acc, num) => acc * num, 1);
+            document.getElementById("result").innerText = `Product: ${result}`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Sum and Multiply Numbers</h2>
+    <input type="text" id="numbers" placeholder="Enter numbers separated by commas">
+    <button onclick="sum()">Sum</button>
+    <button onclick="multiply()">Multiply</button>
+    <p id="result"></p>
+</body>
+</html>
