@@ -1,0 +1,8 @@
+function isVowel(char) {
+    const vowels = "aeiouAEIOU";
+    return vowels.indexOf(char) !== -1;
+}
+
+// Example usage:
+console.log(isVowel('a')); // Outputs: true
+console.log(isVowel('b')); // Outputs: false
